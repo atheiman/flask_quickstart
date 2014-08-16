@@ -1,1 +1,1 @@
-alert(new Date());
+// Your functions here

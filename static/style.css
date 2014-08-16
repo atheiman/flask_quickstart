@@ -8,15 +8,7 @@ html,body {
 	background-color:#eee;
 	color:#111;
 }
- 
-div {
-	margin:10px;
-}
- 
-form {
-	display:block;
-}
- 
+
 .large { font-size:115%; }
 .larger { font-size:130%; }
 .largest { font-size:145%; }
