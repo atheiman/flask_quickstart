@@ -1,0 +1,15 @@
+<!doctype html>
+<head>
+<title>Hello from Flask</title>
+</head>
+
+<body>
+{% if name %}
+  <h1>Hello {{ name }}!</h1>
+{% else %}
+  <h1>Hello World!</h1>
+  <p>This html comes from /templates/test.html</p>
+  {% my_url = url_for('test') + "/austin" %}
+  <p>Try this: <a href="{%= my_url %}/austin">{%= my_url %}</a></p>
+{% endif %}
+</body>

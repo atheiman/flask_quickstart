@@ -1,0 +1,38 @@
+html,body {
+	height:100%;
+	margin:0px;
+	min-width:750px;
+	min-height:300px;
+	font-size:100%;
+	font-family:"arial";
+	background-color:#eee;
+	color:#111;
+}
+ 
+div {
+	margin:10px;
+}
+ 
+form {
+	display:block;
+}
+ 
+.large { font-size:115%; }
+.larger { font-size:130%; }
+.largest { font-size:145%; }
+.small { font-size:85%; }
+.smaller { font-size:70%; }
+.smallest { font-size:65%; }
+.inline { display:inline; }
+.block { display:block; }
+.left { text-align:left; }
+.center { text-align:center; }
+.right { float:right; }
+.black { color:#111; }
+.white { color:#eee; }
+.red { color:red; }
+.green { color:green; }
+.bg-black { background-color:#111; }
+.bg-white { background-color:#eee; }
+.bg-red { background-color:red; }
+.bg-green { background-color:green; }

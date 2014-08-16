@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, url_for, request, render_template
 app = Flask(__name__)
 
 @app.route("/")
@@ -36,5 +36,37 @@ def about():
 		If you <a href='/about/'>add a trailing slash</a>, Flask will 404.
 		"""
 
+@app.route("/links")
+def links():
+	return """
+		<h2>This is URL building with Flask's <code>url_for()</code> function.</h2>
+		<p>Be sure to include: <code>from flask import url_for</code>.</p>
+		<p><code>url_for()</code> will return the URL for the function name you pass it as a string. Earlier we defined <code>about()</code> to run for the "/about" route, so <code>url_for('about')</code> will return <code>/about</code>.</p>
+		<p><a href='%s'>Public</a></p>
+		<p><a href='%s'>About</a></p>
+		<p><a href='%s'>Links</a></p>
+		<p>All the links above are generated with the <code>url_for()</code> function.</p>
+		""" % (url_for('public'), url_for('about'), url_for('links'))
+
+@app.route("/form", methods=['GET', 'POST'])
+def form():
+	if request.method == 'POST':
+		# show the posted content
+		return "this was posted"
+	else:
+		# show the form
+		return """
+			<h2>Form</h2>
+			<form action='%s' method='post'>
+			<input type='text' name='myinput'>
+			<input type='submit'>
+			</form>
+			""" % url_for('form')
+
+@app.route('/test/')
+@app.route('/test/<name>')
+def test(name=None):
+    return render_template('test.html', name=name)
+
 if __name__ == "__main__":
-	app.run(debug=True)
+	app.run(debug=True,host='0.0.0.0')
